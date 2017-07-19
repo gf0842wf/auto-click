@@ -67,7 +67,7 @@
           },
           "delay": {
             "type": "integer",
-            "title": "延迟时间",
+            "title": "延迟时间（ms）",
             "description": "",
             "default": 1000,
             "minimum": 10

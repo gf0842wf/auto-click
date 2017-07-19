@@ -32,8 +32,7 @@ function isPageContain(text) {
 }
 
 function getPage() {
-    let html = document.getElementsByTagName('html')[0].innerHTML;
-    return html;
+    return document.getElementsByTagName('html')[0].innerHTML;
 }
 
 function findPageRe(re) {
