@@ -1,0 +1,84 @@
+{
+  "title": "Advanced Policy",
+  "type": "object",
+  "id": "policy_advanced",
+  "properties": {
+    "status": {
+      "type": "boolean",
+      "title": "是否启用",
+      "format": "checkbox",
+      "default": true
+    },
+    "name": {
+      "type": "string",
+      "default": "default",
+      "title": "规则名称",
+      "description": "The policy name",
+      "maxLength": 15
+    },
+    "type": {
+      "type": "string",
+      "default": "advanced",
+      "title": "类型",
+      "readonly": true
+    },
+    "description": {
+      "type": "string",
+      "title": "规则描述",
+      "description": "The policy description",
+      "maxLength": 50
+    },
+    "domain": {
+      "type": "string",
+      "title": "网站域名",
+      "description": "The web page prefix"
+    },
+    "rows": {
+      "type": "array",
+      "format": "table",
+      "title": "规则集",
+      "description": "Conditional execution rules",
+      "uniqueItems": true,
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "备注",
+            "description": ""
+          },
+          "contain": {
+            "type": "string",
+            "title": "定位页面（空格分割）",
+            "description": ""
+          },
+          "click_type": {
+            "type": "string",
+            "title": "类型",
+            "default": "链接",
+            "enum": ["链接", "按钮"],
+            "description": ""
+          },
+          "link": {
+            "type": "string",
+            "title": "链接／按钮文字",
+            "description": ""
+          },
+          "delay": {
+            "type": "integer",
+            "title": "延迟时间",
+            "description": "",
+            "default": 1000,
+            "minimum": 10
+          },
+          "define": {
+            "type": "string",
+            "title": "自定义条件",
+            "default": ""
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "auto click",
+  "version": "1.0",
+  "description": "auto click",
+  "icons": {
+    "16": "icon/icon_16.png",
+    "48": "icon/icon_48.png",
+    "128": "icon/icon_128.png"
+  },
+  "options_page": "html/options.html",
+  "browser_action": {
+    "default_icon": {
+      "16": "icon/icon_16.png",
+      "48": "icon/icon_48.png"
+    },
+    "default_title": "auto click",
+    "default_popup": "html/popup.html"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "js/action.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "tabs",
+    "storage",
+    "background"
+  ]
+}
